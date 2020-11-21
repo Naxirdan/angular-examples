@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModalComponent } from './common/modal/modal.component';
+import { ModalBindedComponent } from './common/modal-binded/modal-binded.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalComponent,
+    ModalBindedComponent
   ],
   imports: [
     BrowserModule,
