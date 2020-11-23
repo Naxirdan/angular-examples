@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-binded',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-binded.component.scss']
 })
 export class ModalBindedComponent implements OnInit {
-
+  @Input() public title: string = 'Not Binded'
+  @Output() public action = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  clickButton = (response: string) => this.action.emit(response)
 
 }
