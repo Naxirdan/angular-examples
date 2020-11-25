@@ -25,7 +25,7 @@ export class HttpErrorsResponseInterceptor implements HttpInterceptor {
     switch(error.status)
     {
       case 400:
-        this.toastr.info()
+        this.toastr.info(error.message, error.statusText, {progressBar: true})
         console.log(error)
         return throwError(error)
       case 401:
