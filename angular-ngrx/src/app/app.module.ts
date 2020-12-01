@@ -8,14 +8,19 @@ import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from 'src/app/core/store';
+import { HttpClientModule } from '@angular/common/http';
+import { UserEffects } from './core/store/user/effect/user.effect';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers,
       {
         metaReducers: !environment.production ? [] : [],
@@ -28,7 +33,7 @@ import { reducers } from 'src/app/core/store';
     !environment.production
       ? StoreDevtoolsModule.instrument()
       : [],
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([UserEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
