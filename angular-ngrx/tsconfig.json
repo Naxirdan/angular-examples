@@ -4,9 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@app/": ["src/app/"],
-      "@core": ["src/app/core/"],
-      "@store": ["src/app/core/store/"]
+      "@app": ["src/app/*"],
+      "@core": ["src/app/core/*"],
+      "@store": ["src/app/core/store/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

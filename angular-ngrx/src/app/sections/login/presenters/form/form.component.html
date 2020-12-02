@@ -1,0 +1,10 @@
+<div *ngIf="user">
+  <h1>Bienvenido {{ user }}</h1>
+</div>
+
+<div *ngIf="!user">
+  <input type="text" (keyup)="updatePayload('username', $event.target.value)" (change)="updatePayload('username', $event.target.value)" placeholder="username">
+  <input type="password" (keyup)="updatePayload('password', $event.target.value)" (change)="updatePayload('password', $event.target.value)" placeholder="password">
+</div>
+
+{{ user}}

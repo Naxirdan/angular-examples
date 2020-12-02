@@ -8,6 +8,8 @@ export enum UserActionTypes {
 
   UpdateUserEditPayload = '[User] Update User Edit Payload',
 
+  UpdateUserLoginPayload = '[User] Update User Login Payload',
+
   UpdateUser = '[User] Update User',
   UpdateUserSuccess = '[User] Update User Success',
   UpdateUserFail = '[User] Update User Fail',
@@ -28,7 +30,7 @@ export const LoadLoggedUser = createAction(
 export const LoadLoggedUserSuccess = createAction(
   UserActionTypes.LoadLoggedUserSuccess,
   (
-    data: {payload: UserResponse},
+    data: { payload: UserResponse },
   ) => ({
     ...data,
   })
@@ -36,9 +38,18 @@ export const LoadLoggedUserSuccess = createAction(
 
 export const LoadLoggedUserFail = createAction(
   UserActionTypes.LoadLoggedUserFail,
-    (
+  (
     data: { payload: string },
   ) => ({
     ...data,
   }),
 );
+
+export const UpdateUserLoginPayload = createAction(
+  UserActionTypes.UpdateUserLoginPayload,
+  (
+    data: { property: string, value: string  }
+  ) => ({
+    ...data
+  })
+)

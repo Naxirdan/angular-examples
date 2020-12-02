@@ -15,8 +15,8 @@ export class UserEffects {
     this.actions$.pipe(
     ofType(UserActionTypes.LoadLoggedUser),
     mergeMap(() => {
-      return this.api.getUserLogged$().pipe(map((user: UserResponse) =>
-        LoadLoggedUserSuccess({payload: user})),
+      return this.api.getUserLogged$().pipe(
+        map((user: UserResponse) => LoadLoggedUserSuccess({payload: user})),
         catchError(err => of(LoadLoggedUserFail({payload: err.message}))))
     })
   ))
